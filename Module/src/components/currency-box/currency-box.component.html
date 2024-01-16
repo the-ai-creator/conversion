@@ -1,0 +1,26 @@
+<section>
+  <div class="boxWrapper">
+    <div class="leftSection">
+      From:
+      <div class="select-wrap">
+        <select name="" id="select-box">
+          <option *ngFor="let country of itemsList">{{ country.name }}</option>
+        </select>
+      </div>
+      <input id="styled-input" min="0" (input)="validatePositiveNumber($event)" placeholder="Enter amount" />
+      <p id="error-message"></p>
+    </div>
+
+    <button class="convertBtn" (click)="convertAmount()">Convert</button>
+
+    <div class="rightSection">
+      To:
+      <div class="select-wrap">
+        <select name="" id="select-box2">
+          <option *ngFor="let country of itemsList">{{ country.name }}</option>
+        </select>
+      </div>
+      <input type="text" id="styled-input2" readonly [placeholder]="this.convertedAmount">
+    </div>
+  </div>
+</section>
